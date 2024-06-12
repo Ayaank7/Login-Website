@@ -128,3 +128,5 @@ Login-Website/
 ├── login.php
 ├── signup.php
 └── README.md
+```
+![Screenshot 2024-06-12 131855](https://github.com/Ayaank7/Login-Website/assets/142133833/88c74f0b-4bb8-4361-ae4e-e55d643ee54e)
