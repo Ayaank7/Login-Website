@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Slide Navbar</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+
+        <div class="signup">
+            <form action="signup.php" method="post">
+                <label for="chk" aria-hidden="true">Sign Up</label>
+                <input type="text" id="userName" name="userName" placeholder="User Name" required="">
+                <input type="password" id="Password" name="Password" placeholder="Password" required="">
+                <span id="password-length-message"></span> <!-- Add this element for displaying password length message -->
+                <span id="special-character-message"></span> <!-- Add this element for displaying special character message -->
+                <button value="signup">Sign up</button>
+            </form>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var passwordInput = document.getElementById('Password');
+                var passwordLengthMessage = document.getElementById('password-length-message'); // Get the element for password length message
+                var specialCharacterMessage = document.getElementById('special-character-message'); // Get the element for special character message
+        
+                passwordInput.addEventListener('input', function() {
+                    var password = passwordInput.value;
+                    var hasSpecialCharacter = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password); // Regex to check for special characters
+                    
+                    if (password.length < 8) {
+                        passwordLengthMessage.innerText = 'Password must be greater than 8 characters.';
+                        passwordLengthMessage.style.color = 'red';
+                    } else {
+                        passwordLengthMessage.innerText = '';
+                    }
+        
+                    if (!hasSpecialCharacter) {
+                        specialCharacterMessage.innerText = 'Password must include at least one special character.';
+                        specialCharacterMessage.style.color = 'red';
+                    } else {
+                        specialCharacterMessage.innerText = '';
+                    }
+                });
+            });
+        </script>
+        
+        
+        <div class="login">
+            <form action="login.php" method="post">
+                <label for="chk" aria-hidden="true">Login</label>
+                <input type="text" id="userName" name="userName" placeholder="User Name" required="">
+                <input type="password" id="Password" name="Password" placeholder="Password" required="">
+                <button value="Login">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
