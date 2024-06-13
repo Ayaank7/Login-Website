@@ -118,8 +118,6 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 ## Project Structure
 
-Briefly explain the structure of your project files and folders.
-
 ```plaintext
 Login-Website/
 ├── styles.css
